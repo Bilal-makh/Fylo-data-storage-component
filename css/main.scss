@@ -1,0 +1,117 @@
+@import "./sass/root";
+@import "./sass/global";
+@import "./sass/buttons";
+@import "./sass/mixin";
+
+main {
+  display: flex;
+  gap: 2.5rem;
+  padding: 20px;
+  margin: auto;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+
+  .info {
+    width: 300px;
+    height: 180px;
+    border-top-right-radius: 80px;
+    @include breakpoint(mobile) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .logo {
+      width: 120px;
+      max-width: 100%;
+      margin-bottom: 1.25rem;
+    }
+  }
+  .storge-sec {
+    margin-top: 30px;
+    width: 500px;
+    height: 150px;
+
+    @include breakpoint(mobile) {
+      width: 100%;
+      margin: auto;
+    }
+    .storge {
+      position: relative;
+      h4 {
+        color: var(--Grayish-Blue);
+        margin-bottom: 20px;
+        span {
+          color: var(--Pale-Blue);
+        }
+      }
+      .storge-bar {
+        height: 15px;
+        border-radius: 50px;
+        background-color: var(--Very-Dark-Blue);
+        > span {
+          position: relative;
+          border-radius: 50px;
+          display: block;
+          width: 80%;
+          height: 100%;
+          color: red;
+          background: linear-gradient(to right, var(--Gradient));
+          &::before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            right: 2px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--Pale-Blue);
+            border-radius: 100%;
+          }
+        }
+      }
+      .storage-capacity {
+        color: var(--Pale-Blue);
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      p {
+        position: absolute;
+        top: -60px;
+        right: 5px;
+        width: fit-content;
+        padding: 10px;
+        background-color: #fff;
+        color: var(--Grayish-Blue);
+        border-radius: 6px;
+        font-size: 13px;
+        @include breakpoint(mobile) {
+          top: auto;
+          right: auto;
+          bottom: -90px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 0.625rem;
+        }
+        span {
+          color: var(--Dark-Blue);
+          font-size: 2rem;
+          font-weight: 700;
+          margin-right: 2px;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: -9px;
+        right: 5px;
+        border-width: 20px 0px 0 20px;
+        border-style: solid;
+        border-color: #fff transparent transparent transparent;
+        @include breakpoint(mobile) {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

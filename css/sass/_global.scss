@@ -1,0 +1,40 @@
+@import "mixin";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  background-color: var(--Very-Dark-Blue);
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include breakpoint(mobile) {
+    background-image: url(../images/bg-mobile.png);
+    background-size: cover;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  background-color: var(--Dark-Blue);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000004d;
+}

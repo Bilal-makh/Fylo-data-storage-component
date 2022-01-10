@@ -1,0 +1,235 @@
+:root {
+  --Gradient: hsl(6, 100%, 80%) , hsl(335, 100%, 65%);
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  background-color: var(--Very-Dark-Blue);
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url(../images/bg-mobile.png);
+    background-size: cover;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  background-color: var(--Dark-Blue);
+  padding: 40px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #0000004d;
+          box-shadow: 0 0 10px #0000004d;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.icons li {
+  padding: 3px;
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.5rem;
+  padding: 20px;
+  margin: auto;
+}
+
+@media (max-width: 767px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+main .info {
+  width: 300px;
+  height: 180px;
+  border-top-right-radius: 80px;
+}
+
+@media (max-width: 767px) {
+  main .info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+main .info .logo {
+  width: 120px;
+  max-width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+main .storge-sec {
+  margin-top: 30px;
+  width: 500px;
+  height: 150px;
+}
+
+@media (max-width: 767px) {
+  main .storge-sec {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+main .storge-sec .storge {
+  position: relative;
+}
+
+main .storge-sec .storge h4 {
+  color: var(--Grayish-Blue);
+  margin-bottom: 20px;
+}
+
+main .storge-sec .storge h4 span {
+  color: var(--Pale-Blue);
+}
+
+main .storge-sec .storge .storge-bar {
+  height: 15px;
+  border-radius: 50px;
+  background-color: var(--Very-Dark-Blue);
+}
+
+main .storge-sec .storge .storge-bar > span {
+  position: relative;
+  border-radius: 50px;
+  display: block;
+  width: 80%;
+  height: 100%;
+  color: red;
+  background: -webkit-gradient(linear, left top, right top, from(var(--Gradient)));
+  background: linear-gradient(to right, var(--Gradient));
+}
+
+main .storge-sec .storge .storge-bar > span::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--Pale-Blue);
+  border-radius: 100%;
+}
+
+main .storge-sec .storge .storage-capacity {
+  color: var(--Pale-Blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+main .storge-sec .storge p {
+  position: absolute;
+  top: -60px;
+  right: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  background-color: #fff;
+  color: var(--Grayish-Blue);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+@media (max-width: 767px) {
+  main .storge-sec .storge p {
+    top: auto;
+    right: auto;
+    bottom: -90px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    font-size: 0.625rem;
+  }
+}
+
+main .storge-sec .storge p span {
+  color: var(--Dark-Blue);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+main .storge-sec .storge::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: 5px;
+  border-width: 20px 0px 0 20px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+@media (max-width: 767px) {
+  main .storge-sec .storge::after {
+    visibility: hidden;
+  }
+}
+/*# sourceMappingURL=main.css.map */

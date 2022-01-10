@@ -1,0 +1,14 @@
+.icons {
+  display: flex;
+  gap: 0.625rem;
+  li {
+    padding: 3px;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+}
